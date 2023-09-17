@@ -18,11 +18,11 @@ def valid_token(token : str, uid : int):
 @celery.task()
 def process_task(payload : dict):
     if payload['social'] == 1:
-        response = requests.get('http://127.0.0.1:4000/', json=payload)
+        response = requests.post('http://127.0.0.1:4000/', json=payload)
         
         return response.json()
     elif payload['social'] == 2:
-        response = requests.get('http://127.0.0.1:5000/', json=payload)
+        response = requests.post('http://127.0.0.1:5000/', json=payload)
         
         return response.json()
     else:
