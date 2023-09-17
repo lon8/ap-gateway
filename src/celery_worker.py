@@ -27,8 +27,8 @@ def process_task(payload : dict):
         return response.json()
     else:
         error = {
-            'search_query': payload['search_query'],
-            'keyError': 'Key "social" is false'
+            'status_code': 404,
+            'msg': 'NotFound'
         }
         return error
     
